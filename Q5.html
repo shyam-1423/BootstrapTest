@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    section{
+      height: 100vh;
+      width: 100%;
+      background-image: url(https://c4.wallpaperflare.com/wallpaper/586/603/742/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container{
+      padding-top: 5%;
+    }
+    .registration-form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: transparent;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      border-radius: 0;
+      backdrop-filter: blur(70px);
+      transition:backdrop-filter  .5s ease-in-out;
+      &:hover{
+        backdrop-filter: blur(10px);
+        border: 2px solid #fff;
+      }
+    }
+
+    .form-title {
+      color: #000000;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      border: none;
+      border-radius: 0;
+      border-bottom: 3px solid #000;
+    }
+    /* buttons */
+    .btn{
+      background-color: #101cb9;
+      color: #fff;
+      font-weight: 600;
+      font-size: 20px;
+      border-radius: 0;
+      transition: all .5s ease-in-out;
+      &:hover{
+        background-color: #fff;
+        border-radius: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <!-- section Background image -->
+    <div class="container">
+      <div class="registration-form">
+        <!-- Registration Form -->
+        <h2 class="form-title">Register Here</h2>
+        <form>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="terms">
+            <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn w-100">Register</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

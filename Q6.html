@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        .navbar {
+            background-color: #2202da;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-size: 22px;
+        }
+
+        .fw-bolder a {
+            color: #ffffff;
+        }
+
+        .nav-link {
+            color: #fffefe;
+            /* Dark text for links */
+            position: relative;
+            font-weight: 600;
+            font-size: 22px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        #icon {
+            padding: 10px;
+        }
+
+        /* Hover effect */
+        .nav-link:hover {
+            color: #fafafa;
+            /* Change text color on hover */
+        }
+
+        /* Underline effect */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            background-color: #4da528;
+            bottom: -2px;
+            left: 0;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            /* Show underline on hover */
+        }
+
+        /* Offcanvas styles */
+        .offcanvas-header {
+            background-color: #2202da;
+        }
+
+        .offcanvas-body .nav-link {
+            color: #2202da;
+            /* White text in offcanvas */
+        }
+
+        .offcanvas-body .nav-link:hover {
+            color: #ecaf06;
+            /* Hover effect for offcanvas menu */
+        }
+
+        .offcanvas-body .nav-link::after {
+            background-color: #f7c12a;
+            /* Saffron color for underline in offcanvas */
+        }
+
+        .navbar-toggler {
+            background-color: #fff;
+            border-radius: 0;
+        }
+
+        .navbar-toggler-icon {
+            color: #000000;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            background-image: url(https://aeroscience.wordpress.com/wp-content/uploads/2016/02/earth-at-night-view-from-space-4k-wallpaper-1980x1114.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            /* background-attachment: fixed; */
+        }
+
+        section h1 {
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 38%;
+            left: 35%;
+            transform: translateY(-50%);
+            font-size: 3vw;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                background-size: contain;
+                background-position: center top;
+            }
+
+            section h1 {
+                font-size: 5vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                background-size: contain;
+                background-position: center top;
+            }
+
+            section h1 {
+                font-size: 7vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg position-sticky top-0">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder" href="#">Earth</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <i id="icon" class="fa-solid fa-bars fa-lg" style="color: #000000;"></i>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-block">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+            <!-- Custom close button color -->
+            <button type="button" class="btn-close custom-close" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section>
+        <h1>Explore about EARTH</h1>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
